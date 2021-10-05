@@ -45,9 +45,9 @@ def third_task
   end
 end
 
-print("First task result:")
+print("First task result:\n")
 first_task
-print("\nSecond task result:")
+print("\nSecond task result:\n")
 second_task
-print("\nThird task result:")
+print("\nThird task result:\n")
 third_task
