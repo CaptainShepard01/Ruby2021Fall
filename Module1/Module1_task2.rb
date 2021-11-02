@@ -12,7 +12,7 @@ class Patient
   end
 
   def to_s
-    @id.to_s + ', ' + @name.to_s + ', ' + @address.to_s + ', ' + @phone.to_s + ', ' + @medical_card_number.to_s + ', ' + @diagnostic.to_s + "\n"
+    "#{@id}, #{@name}, #{@address}, #{@phone}, #{@medical_card_number}, #{@diagnostic}\n"
   end
 end
 
