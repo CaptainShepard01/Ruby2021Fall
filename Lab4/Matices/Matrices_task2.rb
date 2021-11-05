@@ -1,6 +1,6 @@
 require 'matrix'
 
-def get_matrix(n, k)
+def generatet_matrix(n, k)
   Matrix.build(n, n) do |row_index, column_index|
     if row_index == column_index
       2
@@ -29,7 +29,7 @@ def print_matrix(matrix)
   }
 end
 
-def Gauss_inverse_way(matrix_a, n)
+def Gauss_inverse_trace(matrix_a, n)
   x = Matrix.zero(1,n)
 
   (0..(n-1)).reverse_each { |i|
@@ -48,7 +48,7 @@ def solve_Gauss(matrix, b)
   print("Matrix:\n")
   print_matrix matrix
   print("\nValues vector:\n")
-  p b
+  print("#{b[0]}^T\n")
   print("\n")
 
   current_matrix = Matrix.hstack(matrix, Matrix.column_vector(b[0].to_a)).to_a
@@ -68,9 +68,8 @@ def solve_Gauss(matrix, b)
   }
 
   print_matrix(Matrix.rows(current_matrix))
-  print("\nResult:\n")
-  result = Gauss_inverse_way(current_matrix, n)
-  p result
+  result = Gauss_inverse_trace(current_matrix, n)
+  printf("\nResult: #{result}^T\n")
 end
 
 def main_function
@@ -79,7 +78,7 @@ def main_function
     n = gets.chomp.to_i
   end while n < 2 || n > 9
 
-  matrix_a = get_matrix(n, 5)
+  matrix_a = generatet_matrix(n, 5)
   vector_b = get_vector n
 
   solve_Gauss(matrix_a, vector_b)

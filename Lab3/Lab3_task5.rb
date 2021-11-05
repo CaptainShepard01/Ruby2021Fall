@@ -23,7 +23,7 @@ def first_task
 end
 
 def second_task
-  step = ($PI - $PI / $N).to_f / (3.0 / 2 + $c)
+  step = ($PI - $PI / $N).to_f / (3.0 * $N / 2 + $c)
   arguments_array = ($PI / $N..$PI).step(step).to_a
   arguments_array.each { |argument| printf("x = #{'%.2f' % argument}, z = #{'%.2f' % func_z(argument)}\n") }
 end

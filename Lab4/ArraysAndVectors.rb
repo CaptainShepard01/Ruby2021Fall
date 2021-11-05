@@ -1,4 +1,4 @@
-def get_random_array(n)
+def generate_array(n)
   array = []
   (1..n).each {
     element = rand(-n..n)
@@ -19,7 +19,7 @@ def get_repeating_number_count(array)
 end
 
 def first_task
-  array = get_random_array(12)
+  array = generate_array(12)
   number = get_repeating_number_count(array)
   printf("First task:\nArray: #{array}\nNumber of repeating sections: #{number}\n\n")
 end
@@ -40,15 +40,15 @@ def find_intersection_of_arrays(first_array, second_array)
 end
 
 def third_task
-  first_array = get_random_array(10).sort
-  second_array = get_random_array(10).sort
+  first_array = generate_array(10).sort
+  second_array = generate_array(10).sort
   intersection = find_intersection_of_arrays(first_array, second_array)
   printf("Third task (intersection of arrays):\nFirst array: #{first_array}
 Second array: #{second_array}\nIntersection: #{intersection}\n\n")
 end
 
 def fifth_task
-  array = get_random_array(13)
+  array = generate_array(13)
   zeros = []
   negatives = []
   positives = []
@@ -63,7 +63,7 @@ def fifth_task
 end
 
 def eighth_task
-  array = get_random_array(16)
+  array = generate_array(16)
   repeating = []
   sorted = array.sort
 
