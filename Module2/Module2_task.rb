@@ -15,7 +15,7 @@ class Publication
   end
 
   def to_s
-    "Id: #{@id}, Topic: #{@topic}, Author: #{@author}, Date: #{@date}, Links: #{@links}, Type: #{@type}"
+    "Id: #{@id}; Topic: #{@topic}; Author: #{@author}; Date: #{@date}; Links: #{@links}; Type: #{@type}"
   end
 end
 
@@ -28,7 +28,7 @@ class ScientificPublication < Publication
   end
 
   def to_s
-    super + ", Science sphere: #{@science_sphere}"
+    super + "; Science sphere: #{@science_sphere}"
   end
 end
 
@@ -41,7 +41,7 @@ class GeneralPublication < Publication
   end
 
   def to_s
-    super + ", General sphere: #{@general_sphere}"
+    super + "; General sphere: #{@general_sphere}"
   end
 end
 
@@ -57,7 +57,7 @@ class PublicationsArray
   end
 
   def alphabet_order
-    sorted = publications.sort { |a, b| a.topic <=> b.topic }
+    sorted = @publications.sort { |a, b| a.topic <=> b.topic }
     (0..sorted.size).each { |i|
       print "#{sorted[i]}", "\n"
     }
