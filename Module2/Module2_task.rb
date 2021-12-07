@@ -1,5 +1,7 @@
 require 'date'
 
+# Variant 1
+
 class Publication
   attr_accessor :id, :topic, :author, :date, :links, :type
 
